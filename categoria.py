@@ -88,6 +88,7 @@ def deletar_categoria(conexao):
     sql_delete = "delete from categoria where id = "+ id
     cursor.execute(sql_delete)
     conexao.commit()
+    
 
 
 
