@@ -61,11 +61,11 @@ def listar_produto(conexao):
 def consultar_produto_por_id(conexao):
     id = input("Digite o ID:")
     cursor = conexao.cursor()
-    cursor.execute("select id,nome from cliente where id ="+ id)
+    cursor.execute("select id,nome,valor_venda, estoque from produto where id ="+ id)
     registro = cursor.fetchone()
 
     if registro is None:
-        print("Cliente não encontrado:")
+        print("Produto não encontrado:")
     else:
         print(F"| ID          ..:{registro[0]}")
         print(F"| Nome          :{registro[1]}")
